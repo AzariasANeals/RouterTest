@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import { Link, router } from 'expo-router';
+import { Link, router, Redirect } from 'expo-router';
 
 function ExercisePage() {
 	return (
@@ -12,6 +12,10 @@ function ExercisePage() {
 	);
 }
 
+export function Route(){
+  return <Redirect href="/evanbacon" />;
+}
+
 export default function Page() {
   return (
     <View style={styles.container}>
@@ -19,6 +23,7 @@ export default function Page() {
         <Text style={styles.title}>Hello World</Text>
         <Text style={styles.subtitle}>This is the first page of your app.</Text>
         <ExercisePage />
+        
       </View>
     </View>
   );

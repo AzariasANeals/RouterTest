@@ -1,17 +1,18 @@
 import { View, Text } from 'react-native';
-import { Link, useParams, useState } from 'expo-router';
+import { Link, useParams, useLocalSearchParams } from 'expo-router';
 
+// 			<Link href= '/.[user].js'> Go to User Page </Link>
 
 export default function UserProfilePage() {
-
-		const userId  = [{ID: 'user123', key:'1'}];
-	
+		const local  = useLocalSearchParams();	
+		console.log("Local:", local.user)
 		return (
 		<View>
-			<Text key = {userId.key}>THIS IS THE USER PROFILE PAGE</Text>
+			<Text>THIS IS THE USER PROFILE PAGE</Text>
 			<Link href= '/HomePage'> Go to Home Page </Link>
 			<Link href= '/AboutPage'> Go to About Page </Link>
-			<Text>User ID: {userId.userID}</Text>
+			<Link href ='/index.js'> [User.js] Page</Link>
+			<Text>User ID: {local.user}</Text>
 		</View>
 	);
 }
